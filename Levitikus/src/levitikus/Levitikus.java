@@ -1,8 +1,5 @@
 package levitikus;
-import java.sql.SQLException;
 import java.sql.Connection;
-import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -12,7 +9,7 @@ public class Levitikus {
     
         Connection conn = null;
         try {
-            conn = ConexionBd.getConnection();
+            conn = ConexionBd.getInstance().getConnection();
             
             String sql = "SELECT * FROM cliente";
             PreparedStatement ps = conn.prepareStatement(sql);
@@ -35,9 +32,9 @@ public class Levitikus {
         }catch (SQLException e) {
             System.err.println("Error durante la operación con la base de datos: " + e.getMessage());
         } finally {
-            ConexionBd.closeConnection(conn);
+            ConexionBd.closeConnection();
         }
-        }
+    }
  }
     
 
