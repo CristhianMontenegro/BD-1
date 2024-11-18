@@ -7,9 +7,9 @@ import java.sql.SQLException;
 public class ConexionBd {
 
     // Parámetros de conexión
-    private static final String URL = "";
-    private static final String USER = "";
-    private static final String PASSWORD = "";
+    private static final String URL = "jdbc:postgresql://10.4.3.195:5432/supportsp";
+    private static final String USER = "supportsp";
+    private static final String PASSWORD = "stL098m";
 
     // Instancia única de la clase
     private static ConexionBd instance;
